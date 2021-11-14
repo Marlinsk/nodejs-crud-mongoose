@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../models/Post');
 
-// Get all Posts
+// Pegar todos os dados salvos no banco
 router.get('/', async (req, res) => {
     try {
         const posts = await Post.find();
@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// Create a Post
+// Criar um dado 
 router.post('/', async (req,res) => {
     const post = new Post({
         name: req.body.name,
@@ -28,7 +28,7 @@ router.post('/', async (req,res) => {
     }
 });
 
-// Get specific post
+// Pegar um dado específico
 router.get('/:postId', async (req,res) => {
     try {
         const post = await Post.findById(req.params.postId);
@@ -36,25 +36,27 @@ router.get('/:postId', async (req,res) => {
     } catch (error) {
         res.json({ message: error });
     }
-    
 });
 
-// Update a post
+// Atualizar um dado
 router.patch('/:postId', async (req,res) => {
     try {
         const updatePost = await Post.updateOne(
             {_id: req.params.postId}, 
-            { $set: { name: req.body.name }},
-            { $set: { mythology: req.body.mythology }},
-            { $set: { description: req.body.description }}
-            );
+            { $set: 
+                {   name: req.body.name,
+                    mythology: req.body.mythology,
+                    description: req.body.description 
+                }
+            }
+        );
         res.json(updatePost);
     } catch (error) {
         res.json({ message: error });
     }
 });
 
-// Delete a post
+// Deletar um dado
 router.delete('/:postId', async (req,res) =>{
     try {    
         const removedPost =  await Post.remove({_id: req.params.postId});
@@ -62,6 +64,6 @@ router.delete('/:postId', async (req,res) =>{
     } catch (error) {
         res.json({ message: error });
     }
-})
+});
 
 module.exports = router;
