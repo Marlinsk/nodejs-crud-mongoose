@@ -11,11 +11,11 @@ app.use(bodyParser.json());
 // Importar Routes
 const postsRoute = require('./routes/posts');
 
-app.use('/posts', postsRoute);
+app.use('/seres-mitologicos', postsRoute);
 
 // Routes
 app.get('/', (req, res) => {
-    res.send('Página Home')
+    res.send('Página inicial')
 });
 
 // Conexão com o MongoDB
