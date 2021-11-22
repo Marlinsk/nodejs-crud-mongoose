@@ -7,7 +7,7 @@ const PostSchema = mongoose.Schema({
     },
     mythology: {
         type: String,
-        default: true
+        required: true
     },
     description: {
         type: String,
