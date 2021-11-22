@@ -56,7 +56,7 @@ router.patch('/:postId', async (req,res) => {
     }
 });
 
-// Deletar um dado
+// Deleta um dado
 router.delete('/:postId', async (req,res) =>{
     try {    
         const removedPost =  await Post.remove({_id: req.params.postId});
