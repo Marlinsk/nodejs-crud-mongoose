@@ -11,31 +11,31 @@ Projeto feito para estudo de programação de API RestFull  feito com javascript
 - mongoose
 
 ## Passo a passo
-Instalando o projeto na sua máquina para teste.
+Siga o passo a passo para conseguir rodar o projeto na sua máquina.
 
 ### Clonando e configurando o projeto
 
-Clone
+**1º passo: clone o projeto**
 ```bash
 https://github.com/Marlinsk/nodejs-crud-mongoose.git
 ```
 
-Entre na pasta 
+**2º passo: entre na pasta do projeto clonado** 
 ```bash
 cd nodejs-crud-mongoose.git
 ```
 
-Crie antes de instalar as dependências da aplicação, crie um arquivo .env e insira a chave de conexão do banco de dados.
+**3º passo: crie antes de instalar as dependências da aplicação, crie um arquivo .env e insira a chave de conexão do banco de dados.**
 ```bash
 MONGODB_CONNECTION=mongodb+srv://USERNAME:PASSWORD@HOST:PORT/DATABASE
 ```
 
-Instalando as dependências
+**4º passo: após configura o .env, instale as dependências.**
 ```bash
 npm install
 ```
 
-Rodando a aplicação
+**5º passo: rodando a aplicação.**
 ```bash
 npm run dev
 ```
